@@ -9,21 +9,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
   </head>
 
-  <head>
+  <body>
     <header>
       <div class="menu-mobile">
         <button class="menu-toggle">&#9776;</button>
         <nav class="menu">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Cardápio</a></li>
-            <li><a href="#">Sobre Nós</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cardapio">Cardápio</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
+        <button onclick="openCart()" id="openCartBtn" class="cart" aria-label="Abrir carrinho">🛒</button>
+     </div>
+
+         <!-- Modal do Carrinho -->
+    <div id="cart-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" aria-label="Fechar carrinho">&times;</span>
+        <h2>Seu Carrinho</h2>
+        <ul id="cart-items">
+          <!-- Os itens do carrinho aparecerão aqui -->
+        </ul>
+        <span>Clique para finalizar seu pedido conosco no WhatsApp</span>
+        <a href="https://wa.me/5511955555555" id="checkoutBtn" class="checkoutBtn" target="_blank">Finalizar Pedido</a>
       </div>
+    </div>
+
     </header>
 
     <main>
@@ -32,11 +49,11 @@
           <h1 class="title-menu">Bem-vindo ao Buena Pizza</h1>
           <p>Saborosas pizzas feitas especialmente para você!</p>
            
-          <a href="#menu" class="cta-button">Ver Cardápio</a>
+          <a href="#cardapio" class="cta-button">Ver Cardápio</a>
         </div>
       </section>
 
-      <section class="section-container">
+      <section class="section-container" id="cardapio">
     
         <ul class="container__menu-list">
           <h2 class="section__container-title">Cardápio</h2>
@@ -44,83 +61,98 @@
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Mussarela</h3>
             <p> Molho de tomate, mussarela e orégano.</p> 
+            <span class="price">R$ 30,00</span> 
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Carne Seca</h3>
             <p>Molho de tomate, carne seca desfiada, cebola e mussarela.</p>
+            <span class="price">R$ 55,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Baiana</h3>
             <p>Molho de tomate, calabresa moída, cebola, pimenta, mussarela e orégano.</p>
+            <span class="price">R$ 35,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Portuguesa</h3>
             <p>Molho de tomate, presunto, ovo, cebola, azeitonas, ervilha, mussarela e orégano.</p>
+            <span class="price">R$ 30,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Frango com Catupiry</h3>
             <p>Molho de tomate, frango desfiado, Catupiry e orégano.</p>
+            <span class="price">R$ 40,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Atum</h3>
             <p>Molho de tomate, atum, cebola, azeitonas e orégano.</p>
+            <span class="price">R$ 45,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Pepperoni</h3>
             <p>Molho de tomate, pepperoni fatiado, mussarela e orégano.</p>
+            <span class="price">R$ 38,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Brocólis</h3>
             <p>Molho de tomate, brócolis refogado, alho, mussarela e orégano.</p>
+            <span class="price">R$ 42,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Caprese</h3>
             <p>Molho de tomate, mussarela de búfala, rodelas de tomate, pesto de manjericão e azeite de oliva.</p>
+            <span class="price">R$ 37,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Escarola</h3>
             <p>Molho de tomate, escarola refogada, alho, mussarela e orégano.</p>
+            <span class="price">R$ 46,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Quatro Queijos</h3>
             <p>Molho de tomate, mussarela, provolone, parmesão, catupiry e orégano.</p>
+            <span class="price">R$ 41,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Calabresa</h3>
-            <p>Molho de tomate, calabresa fatiada, cebola, mussarela e orégano.</p>    
+            <p>Molho de tomate, calabresa fatiada, cebola, mussarela e orégano.</p> 
+            <span class="price">R$ 32,00</span>
           </li>
 
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Marguerita</h3>
             <p>Molho de tomate, mussarela, rodelas de tomate, manjericão e parmesão.</p>
+            <span class="price">R$ 50,00</span>
           </li>
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
             <h3>Salame</h3>
             <p>Molho de tomate, fatias de salame, mussarela e orégano.</p>
+            <span class="price">R$ 55,00</span>
           </li>
 
           <li>
             <img class="section__item-img" src="./img/pexels-engin-akyurt-2260208.jpg" alt="Foto de uma pizza">
-            <h3>Rucula</h3>
-            <p>Molho de tomate, rucula, mussarela e oregáno.</p>
+            <h3>Rúcula</h3>
+            <p>Molho de tomate, rucula, mussarela e orégano.</p>
+            <span class="price">R$ 44,00</span>
           </li>
         </ul>
       </section>
-
-      <section class="section__about">
+,
+      <section class="section__about" id="sobre">
         <h2>Sobre Nós</h2>
         <p>Nossa pizzaria é dedicada  a criar as melhores pizzas do mundo, com ingredientes frescos e receitas exclusivas.</p>
       </section>
@@ -130,14 +162,14 @@
         <p>Entre em contato conosco para fazer pedidos ou tirar suas dúvidas.</p>
       </div>
 
-      <div class="contact-container">
+      <div class="contact-container" id="contato">
         <div class="contact-item">
           <strong>Endereço:</strong> Avenida Onze de Outubro, nº 123 <br>
           Centro, Cidade Qualquer/RJ CEP: 12345-678
         </div>
         <div class="contact-item">
           <strong>Telefone:</strong> (11) 5555-5555 <br>
-          <strong>E-mail:</strong><a href="">contato@alessios.pizza</a>
+          <a href="mailto:contato@alessios.pizza">contato@alessios.pizza</a>
         </div>
         <div class="contact-item">
           <strong>Horário de Funcionamento:</strong> <br>
@@ -153,7 +185,7 @@
       <p>&copy 2025 Buena Pizzaria</p>
     </footer>
 
-    <script src="./styles/script.js"></script> <!-- Link para o JS -->
-  </head>
+    <script src="./styles/script.js" defer></script> <!-- Link para o JS -->
+  </body>
 </html>
 
